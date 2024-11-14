@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    background-color: blue;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+}
+
+a {
+    color: #000;
+}
+
+#main-header a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Rubik", sans-serif;
+}
+
+.message {
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+#main-header {
+    text-align: center;
+}
+
+#main-header img {
+    width: 100%;
+    max-width: 380px;
+}
+
+#main-header.frontpage {
+    margin-top: 6vh;
+}
+
+#main-header h1 {
+    color: #fff;
+    font-size: 6em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    line-height: 1em;
+    margin: 0.8em 0 10px 0;
+}
+
+main {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+#main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu ul li {
+    display: inline-block;
+}
+
+#main-menu ul li a {
+    display: inline-block;
+    padding: 1em 1.2em;
+    text-decoration: none;
+    margin-right: -4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.6s;
+}
+
+#main-menu ul li.current a,
+#main-menu ul li a:hover {
+    background-color: #fff;
+    color: #036aca;
+}
+
+/* Dykplatser */
+/** Två-spalts-design med CSS-grid */
+main.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 1em;
+}
+
+.column {
+    padding: 1em;
+}
+
+.column h2 {
+    margin-top: 0;
+}
+
+.info {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.info p {
+    margin: 0;
+    text-indent: 1em;
+}
+
+.image img {
+    width: 100%;
+}
+
+.submenu {}
+
+.submenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.submenu li a {
+    background-color: #036aca;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    transition: background-color 0.6s;
+}
+
+.submenu li a:hover,
+.submenu li.active a {
+    background-color: #00396e;
+}
+
+.hide {
+    display: none;
+}
+
+/* Medlemsformulär */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 90%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 200px;
+}
+
+input[type="submit"] {
+    background-color: #036aca;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(55, 55, 246);
+}
+
+.about {
+    padding: 1em;
+    border-radius: 4px;
+    background-color: #036aca;
+    color: #fff;
+}
+
+.about p {
+    margin: 0;
+}
+
+.about a {
+    color: #ccc;
+}
+
+footer {
+    text-align: right;
+    color: #fff;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin-top: 4px;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    #main-header h1 {
+        font-size: 4em;
+    }
+
+    main {
+        margin-bottom: 80px;
+    }
+
+    #main-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #036aca;
+        ;
+        height: 80px;
+        width: 100%;
+        text-align: center;
+        line-height: 80px;
+        font-size: 1.1em;
+    }
+
+    #main-menu ul li a {
+        display: inline;
+        padding: 0;
+        margin-right: 0;
+        background-color: transparent;
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    main.grid {
+        grid-template-columns: 1fr;
+    }
+}

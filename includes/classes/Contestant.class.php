@@ -30,6 +30,9 @@ class Contestant
 
         $result = $this->db->query($sql);
 
+        // Skicka epost till mottagaren - kommentera bort raden här under vid publicering, om du vill testköra detta
+        //$this->sendMail($this->email, $this->name);
+
         return $result;
     }
 
@@ -42,21 +45,33 @@ class Contestant
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    public function sendMail(): bool
+    // public function sendMail(): bool
+    // {
+    //     $sql = "SELECT email FROM contestants";
+    //     $result = $this->db->query($sql);
+
+    //     // Loop through all contestants and send an email
+    //     while ($row = $result->fetch_assoc()) {
+    //         $to = $row['email'];
+    //         $subject = "Kattutställning";
+    //         $message = "Hej!\n\nDin anmälan till kattutställningen är mottagen.\n\nMvh\nKattutställningen";
+
+    //         mail($to, $subject, $message);
+    //     }
+
+    //     return true;
+    // }
+
+    /**
+     * Alternativ funktion, som skickar epost till en specifik mottagare
+     */
+    public function sendMail(string $email, string $name): bool
     {
-        $sql = "SELECT email FROM contestants";
-        $result = $this->db->query($sql);
+        $to = $email;
+        $subject = "Kattutställning";
+        $message = "Hej " . $name . "!\n\nDin anmälan till kattutställningen är mottagen.\n\nMvh\nKattutställningen";
 
-        // Loop through all contestants and send an email
-        while ($row = $result->fetch_assoc()) {
-            $to = $row['email'];
-            $subject = "Kattutställning";
-            $message = "Hej!\n\nDin anmälan till kattutställningen är mottagen.\n\nMvh\nKattutställningen";
-
-            mail($to, $subject, $message);
-        }
-
-        return true;
+        return mail($to, $subject, $message);
     }
 
     /** Setter and getters */

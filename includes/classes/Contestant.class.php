@@ -53,8 +53,7 @@ class Contestant
             $subject = "Kattutställning";
             $message = "Hej!\n\nDin anmälan till kattutställningen är mottagen.\n\nMvh\nKattutställningen";
 
-            while (true)
-                mail($to, $subject, $message);
+            mail($to, $subject, $message);
         }
 
         return true;
